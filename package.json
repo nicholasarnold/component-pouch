@@ -1,7 +1,7 @@
 {
   "name": "componentpouch",
   "version": "0.1.0",
-  "homepage": "https://nicholasarnold.github.io/component-pouch/public/",
+  "homepage": "https://nicholasarnold.github.io/component-pouch/",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
