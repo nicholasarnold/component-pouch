@@ -1,5 +1,3 @@
-# Component Pouch
-
 ## Project Overview
 
 Combining two of my favorite things: coding and Dungeons & Dragons. This app fetches a list of  D&D spells from the [SRD API](http://www.dnd5eapi.co/), allows users to sort the list by entering search terms, and add them to their "component pouch," which lists the names of the spells and the material components they require to cast.
