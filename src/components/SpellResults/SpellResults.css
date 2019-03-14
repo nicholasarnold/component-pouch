@@ -2,3 +2,12 @@
   border-top: 1px solid lightgray;
   margin-top: 2%;
 }
+
+.remove-spell-icon {
+  cursor: pointer;
+}
+
+.no-components {
+  font-style: italic;
+  color: #888;
+}
