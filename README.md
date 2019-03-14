@@ -1,6 +1,17 @@
+#Component Pouch
+
 ## Project Overview
 
 Combining two of my favorite things: coding and Dungeons & Dragons. This app fetches a list of  D&D spells from the [SRD API](http://www.dnd5eapi.co/), allows users to sort the list by entering search terms, and add them to their "component pouch," which lists the names of the spells and the material components they require to cast.
+
+## Known Issues
+- SpellsSuggestion.js :: onClick event works on button and for text inside button, but target shifts to image when image is clicked; causes fatal TypeError
+- SRD.js :: API requests use fetch() which doesn’t work on every browser or device
+
+## Future Developments
+- SpellResults.js :: When adding a spell to spellResults: a note saying the API is loading or a loading animation
+- SpellsSuggestion.js :: If a spell has already been added when they type it in, let user know.
+- CSS Fade effect for suggestion list when overflowing
 
 ## Credits
 
@@ -8,9 +19,9 @@ Copright (c) 2019 [Nicholas Arnold](https://github.com/nicholasarnold)
 Release under MIT License (below)
 Permission to use the content of the SRD granted by the OGL (below)
 
-CC 3.0 BY
-The (+) icon was made by [Anas Ramadan](https://www.flaticon.com/authors/anas-ramadan)
-The (-) icon was made by [Dave Gandy](https://www.flaticon.com/authors/dave-gandy)
+The (+) icon was made by [Anas Ramadan](https://www.flaticon.com/authors/anas-ramadan) CC 3.0 BY
+
+The (-) icon was made by [Dave Gandy](https://www.flaticon.com/authors/dave-gandy) CC 3.0 BY
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -29,14 +40,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Permission to copy, modify and distribute the files collectively known as the System Reference Document 5.1 (“SRD5”) is granted solely through the use of the Open Gaming License, Version 1.0a.
 
 This material is being released using the Open Gaming License Version 1.0a and you should read and understand the terms of that license before using this material. 
+
 The text of the Open Gaming License itself is not Open Game Content. Instructions on using the License are provided within the License itself.
 
-The following items are designated Product Identity, as defined in Section 1(e) of the Open Game License Version 1.0a, and are subject to the conditions set forth in Section 7 of the OGL, and are not Open Content: Dungeons & Dragons, D&D, Player’s Handbook, Dungeon Master, Monster Manual, d20 System, Wizards of the Coast, d20 (when used as a trademark), Forgotten Realms, Faerûn, proper names (including those used in the names of spells or items), places, Underdark, Red Wizard of Thay, the City of Union, Heroic Domains of Ysgard, Ever-­‐‑ Changing Chaos of Limbo, Windswept Depths of Pandemonium, Infinite Layers of the Abyss, Tarterian Depths of Carceri, Gray Waste of Hades, Bleak Eternity of Gehenna, Nine Hells of Baator, Infernal Battlefield of Acheron, Clockwork Nirvana of Mechanus, Peaceable Kingdoms of Arcadia, Seven Mounting Heavens of Celestia, Twin Paradises of Bytopia, Blessed Fields of Elysium, Wilderness of the Beastlands, Olympian Glades of Arborea, Concordant Domain of the Outlands, Sigil, Lady of Pain, Book of Exalted Deeds, Book of Vile Darkness, beholder, gauth, carrion crawler, tanar’ri, baatezu, displacer beast, githyanki, githzerai, mind flayer, illithid, umber hulk, yuan-­‐‑ti. 
+The following items are designated Product Identity, as defined in Section 1(e) of the Open Game License Version 1.0a, and are subject to the conditions set forth in Section 7 of the OGL, and are not Open Content: Dungeons & Dragons, D&D, Player’s Handbook, Dungeon Master, Monster Manual, d20 System, Wizards of the Coast, d20 (when used as a trademark), Forgotten Realms, Faerûn, proper names (including those used in the names of spells or items), places, Underdark, Red Wizard of Thay, the City of Union, Heroic Domains of Ysgard, Ever-Changing Chaos of Limbo, Windswept Depths of Pandemonium, Infinite Layers of the Abyss, Tarterian Depths of Carceri, Gray Waste of Hades, Bleak Eternity of Gehenna, Nine Hells of Baator, Infernal Battlefield of Acheron, Clockwork Nirvana of Mechanus, Peaceable Kingdoms of Arcadia, Seven Mounting Heavens of Celestia, Twin Paradises of Bytopia, Blessed Fields of Elysium, Wilderness of the Beastlands, Olympian Glades of Arborea, Concordant Domain of the Outlands, Sigil, Lady of Pain, Book of Exalted Deeds, Book of Vile Darkness, beholder, gauth, carrion crawler, tanar’ri, baatezu, displacer beast, githyanki, githzerai, mind flayer, illithid, umber hulk, yuan-ti. 
 
 All of the rest of the SRD5 is Open Game Content as described in Section 1(d) of the License. 
+
 The terms of the Open Gaming License Version 1.0a are as follows: 
 
-OPEN GAME LICENSE Version 1.0a
+#### OPEN GAME LICENSE Version 1.0a
 
 The following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc ("Wizards"). All Rights Reserved. 
 
@@ -45,13 +58,13 @@ used by a Contributor to identify itself or its products or the associated produ
 
 2. The License: This License applies to any Open Game Content that contains a notice indicating that the Open Game Content may only be Used under and in terms of this License. You must affix such a notice to any Open Game Content that you Use. No terms may be added to or subtracted from this License except as described by the License itself. No other terms or conditions may be applied to any Open Game Content distributed using this License. 
 
-3.Offer and Acceptance: By Using the Open Game Content You indicate Your acceptance of the terms of this License. 
+3. Offer and Acceptance: By Using the Open Game Content You indicate Your acceptance of the terms of this License. 
 
 4. Grant and Consideration: In consideration for agreeing to use this License, the Contributors grant You a perpetual, worldwide, royalty-­‐‑free, non-­‐‑ exclusive license with the exact terms of this License to Use, the Open Game Content. 
 
-5.Representation of Authority to Contribute: If You are contributing original material as Open Game Content, You represent that Your Contributions are Your original creation and/or You have sufficient rights to grant the rights conveyed by this License. 
+5. Representation of Authority to Contribute: If You are contributing original material as Open Game Content, You represent that Your Contributions are Your original creation and/or You have sufficient rights to grant the rights conveyed by this License. 
 
-6.Notice of License Copyright: You must update the COPYRIGHT NOTICE portion of this License to include the exact text of the COPYRIGHT NOTICE of any Open Game Content You are copying, modifying or distributing, and You must add the title, the copyright date, and the copyright holder's name to the COPYRIGHT NOTICE of any original Open Game Content you Distribute. 
+6. Notice of License Copyright: You must update the COPYRIGHT NOTICE portion of this License to include the exact text of the COPYRIGHT NOTICE of any Open Game Content You are copying, modifying or distributing, and You must add the title, the copyright date, and the copyright holder's name to the COPYRIGHT NOTICE of any original Open Game Content you Distribute. 
 
 7. Use of Product Identity: You agree not to Use any Product Identity, including as an indication as to compatibility, except as expressly licensed in another, independent Agreement with the owner of each element of that Product Identity. You agree not to indicate compatibility or co-­‐‑adaptability with any Trademark or Registered Trademark in conjunction with a work containing Open Game Content except as expressly licensed in another, independent Agreement with the owner of such Trademark or Registered Trademark. The use of any Product Identity in Open Game Content does not constitute a challenge to the ownership of that Product Identity. The owner of any Product Identity used in Open Game Content shall retain all rights, title and interest in and to that Product Identity. 
 

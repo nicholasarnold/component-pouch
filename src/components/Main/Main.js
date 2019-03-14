@@ -55,7 +55,6 @@ export class Main extends React.Component {
     .then(newSelectedSpell => {
       const spellsSelected = this.state.spellsSelected;
       spellsSelected.push(newSelectedSpell);
-      // spellsSelected.sort(this.ascending);
       this.setState({ spellsSelected: spellsSelected });
     });
   }
