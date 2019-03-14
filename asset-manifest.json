@@ -1,0 +1,15 @@
+{
+  "main.css": "/component-pouch/static/css/main.3be1404c.chunk.css",
+  "main.js": "/component-pouch/static/js/main.dd20c577.chunk.js",
+  "main.js.map": "/component-pouch/static/js/main.dd20c577.chunk.js.map",
+  "runtime~main.js": "/component-pouch/static/js/runtime~main.c2731f80.js",
+  "runtime~main.js.map": "/component-pouch/static/js/runtime~main.c2731f80.js.map",
+  "static/js/2.c6ac93ca.chunk.js": "/component-pouch/static/js/2.c6ac93ca.chunk.js",
+  "static/js/2.c6ac93ca.chunk.js.map": "/component-pouch/static/js/2.c6ac93ca.chunk.js.map",
+  "index.html": "/component-pouch/index.html",
+  "precache-manifest.b00d2a9a63345b4f4baea5c47740a121.js": "/component-pouch/precache-manifest.b00d2a9a63345b4f4baea5c47740a121.js",
+  "service-worker.js": "/component-pouch/service-worker.js",
+  "static/css/main.3be1404c.chunk.css.map": "/component-pouch/static/css/main.3be1404c.chunk.css.map",
+  "static/media/add-button.svg": "/component-pouch/static/media/add-button.e93377be.svg",
+  "static/media/minus-button.svg": "/component-pouch/static/media/minus-button.0eac654a.svg"
+}
