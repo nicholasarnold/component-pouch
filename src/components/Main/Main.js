@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.css';
 import { SRD } from '../../util/SRD';
+import { ascending } from '../../helper';
 import { SpellSearchBar } from '../SpellSearchBar/SpellSearchBar';
 import { Disclaimer } from '../Disclaimer/Disclaimer';
 import { SpellSuggestions } from '../SpellSuggestions/SpellSuggestions';
@@ -49,13 +50,11 @@ export class Main extends React.Component {
   // 1. Remove from spellsAvailable and spellsSuggested
   // 2. Make API request, add to spellsSelected
   addToSelected = spellId => {
-    this.removeFromAvailable(spellId);
-    this.removeFromSuggestions(spellId);
+    this.removeFromState(spellId, 'spellsAvailable');
+    this.removeFromState(spellId, 'spellsSuggested');
     SRD.fetchSpell(spellId)
     .then(newSelectedSpell => {
-      const spellsSelected = this.state.spellsSelected;
-      spellsSelected.push(newSelectedSpell);
-      this.setState({ spellsSelected: spellsSelected });
+      this.addToState(newSelectedSpell, 'spellsSelected', 'nosort');
     });
   }
 
@@ -63,49 +62,29 @@ export class Main extends React.Component {
   // 1. Remove from spellsSelected
   // 2. Add back to spellsAvailable and spellsSuggested
   removeFromSelected = (spellId, spellName) => {
-    const removedSpellArray = this.state.spellsSelected.filter(spell => spell.id !== spellId);
-    this.setState({ spellsSelected: removedSpellArray });
-    this.addToSpellsAvailable(spellId, spellName);
-    this.addToSpellsSuggested(spellId, spellName);
+    this.removeFromState(spellId, 'spellsSelected');
+    const spell = {
+      id: spellId,
+      name: spellName
+    }
+    this.addToState(spell, 'spellsAvailable');
+    this.addToState(spell, 'spellsSuggested');
   }
 
   /*----------------------------------------*/
   //    STATE SETTERS & HELPER FUNCTIONS    //
   /*----------------------------------------*/
 
-  // Sort spell objects ascending by id
-  ascending = (a, b) => a.id - b.id;
-
-  removeFromAvailable = spellId => {
-    const removedSpellArray = this.state.spellsAvailable.filter(spell => spell.id !== spellId);
-    this.setState({ spellsAvailable: removedSpellArray });
+  removeFromState = (spellId, stateKey) => {
+    const removedSpellArray = this.state[stateKey].filter(spell => spell.id !== spellId);
+    this.setState({ [stateKey]: removedSpellArray });
   }
 
-  removeFromSuggestions = spellId => {
-    const removedSpellArray = this.state.spellsSuggested.filter(spell => spell.id !== spellId);
-    this.setState({ spellsSuggested: removedSpellArray });
-  }
-
-  addToSpellsAvailable = (spellId, spellName) => {
-    const spellsAvailable = this.state.spellsAvailable;
-    const spell = {
-      id: spellId,
-      name: spellName
-    }
-    spellsAvailable.push(spell);
-    spellsAvailable.sort(this.ascending);
-    this.setState({ spellsAvailable: spellsAvailable });
-  }
-
-  addToSpellsSuggested = (spellId, spellName) => {
-    const spellsSuggested = this.state.spellsSuggested;
-    const spell = {
-      id: spellId,
-      name: spellName
-    }
-    spellsSuggested.push(spell);
-    spellsSuggested.sort(this.ascending);
-    this.setState({ spellsSuggested: spellsSuggested });
+  addToState = (spell, stateKey, sort) => {
+    const addedSpellArray = this.state[stateKey];
+    addedSpellArray.push(spell);
+    if (sort !== 'nosort') addedSpellArray.sort(ascending);
+    this.setState({ [stateKey]: addedSpellArray });
   }
 
   /*----------------------------------------*/

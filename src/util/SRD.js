@@ -7,11 +7,11 @@ export const SRD = {
     .then(response => response.json())
     .then(jsonResponse => {
       return jsonResponse.results.map(spell => {
-        const spellId = this.getSpellId(spell.url);
-        const spellName = spell.name;
+        //const spellId = this.getSpellId(spell.url);
+        //const spellName = spell.name;
         return {
-          id: spellId,
-          name: spellName
+          id: this.getSpellId(spell.url),
+          name: spell.name
         }
       })
     })
